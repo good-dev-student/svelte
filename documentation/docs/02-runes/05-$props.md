@@ -162,6 +162,13 @@ The fallback value of a prop not declared with `$bindable` is left untouched —
 	clicks: {object.count}
 </button>
 ```
+Also you can use `$bindable({ count: 0 })' :
+````svelte
+<script>
+	let { object = $bindable({ count: 0 }) } = $props();
+</script>
+
+```
 
 In summary: don't mutate props. Either use callback props to communicate changes, or — if parent and child should share the same object — use the [`$bindable`]($bindable) rune.
 
